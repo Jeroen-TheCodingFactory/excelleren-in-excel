@@ -68,11 +68,25 @@
             <li>ALS heeft drie dingen nodig: een criteria, wat als het waar is, wat als het niet waar is. We vullen bij de criteria onze cijfer cel A2 in. De fomrule wordt: <code>=ALS(A2)</code></li>
             <li>We willen weten of het cijfer onder de 5,5 is. We zetten achter A2 een kleiner dan (<) teken en dan 5,5. De formule wordt: <code> =ALS(A2 < 5,5)</code></li>
             <li>Zet een <code>;</code> hierachter. De formule wordt <code>=ALS(A2<5,5;)</code></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>Als je lager dan een 5,5 hebt heb je een onvoldoende. Hoger een voldoende. Na de puntkomma zetten we naar wat we moeten neerzetten als het cijfer dus <strong>lager</strong> is dan een 5,5. Vul hier <code>"Onvoldoende"</code> in. De formule wordt: <code>=ALS(A2<5,5;"Onvoldoende")</code></li>
+            <li>Vul hierachter een <code>;</code> in. De formule wordt <code>=ALS(A2<5,5;"Onvoldoende";)</code></li>
+            <li>Na de <code>;</code> voeren we de tekst Voldoende in tussen quotes. De formule wordt: <code>=ALS(A2<5,5;"Onvoldoende";"Voldoende")</code></li>
+            <li>Druk op <code>ENTER</code></li>
         </ol>
+        <p>We hebben nu een tool die voldoende laat zien als het cijfer hoger dan een 5,5 is en onvoldoende als het cijfer lager is, gaaf! Mocht je nou niet een student hebben die een onvoldoende eindcijfer hebt kan je deze veranderen in het tabblad "Cijfers Excel 101".</p>
+        <p>We wilden alleen een formule die onvoldoende, voldoende <strong>en</strong> goed ging onderscheiden. We moeten dus een categorie toevoegen. Dit doen we door een ALS in een ALS te doen. <em>Als</em> dat maar goed gaat... (badum-tss)</p>
+        <ol class="list">
+            <li>Verwijder de quotjes en de text voldoende in de formule van D3. De formule wordt weer: <code>=ALS(A2<5,5;"Onvoldoende";)</code></li>
+            <li>We checken in de buitenste als eerst of het een onvoldoende is door te kijken of het getal kleiner is dan 5,5. Dan zijn we namelijk snel klaar. </li>
+            <li>Nu gaan we checken of het cijfer kleiner is dan een 8,1. Dus een cijfer tussen de 5,5-8 is een voldoende. Dit doen we weer met een ALS()</li>
+            <li>Vul op de plek waar <code>"Voldoende"</code> stond <code>=ALS()</code> in. De formule wordt: <code>=ALS(A2<5,5;"Onvoldoende";ALS())</code></li>
+            <li>In de binnenste ALS checken we opnieuw het cijfer in A2, maar nu of deze kleiner is dan een 8,1. De formule wordt nu: <code>=ALS(A2<5,5;"Onvoldoende";ALS(A2<8,1))</code></li>
+            <li>Als het cijfer kleiner is dan een 8,1 dan is het dus een voldoende. We voegen een <code>;</code> toe achter het criteria in de binnenste als en de tekst "Voldoende". De formule wordt: <code>=ALS(A2<5,5;"Onvoldoende";ALS(A2<8,1;"Voldoende"))</code></li>
+            <li>Als het cijfer niet een voldoende is.... is het een goed! Dit komt omdat de buitenste ALS al alle onvoldoende opvangt. Dit kunnen we ook in de formule zetten: <code>=ALS(A2<5,5;"Onvoldoende";ALS(A2<8,1;"Voldoende";"Goed"))</code></li>
+            <li>Druk op <code>Enter</code></li>
+        </ol>
+        <p>En zo zijn we opeens aan het einde. Je hebt je eerste tool gemaakt in Excel! Gefeliciteerd! Dit is het begin van het beheersen van een tool die ontzettend handig kan zijn voor je werk. Ik hoop dan ook dat je net zoveel plezier hebt gehad bij het uitvoeren als ik bij het maken. </p>
+        <p>Om te kunnen zien wat Excel allemaal wel niet kan nodig ik je uit naar de volgende sectie te gaan. </p>
         <a href="/pages/7.html" class="breadcrumb">7. Gave dingen in Excel </a>
 </body>
 
